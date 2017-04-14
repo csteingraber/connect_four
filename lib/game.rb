@@ -23,7 +23,6 @@ class Game
   def start
     victory = [false]
     until victory[0] || @board.available_spaces.size == 0
-      @board.print_board
       @board.add(@human.color, @human.choose(@board.available_spaces))
       victory = check_victory?
       unless victory[0]
